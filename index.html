@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarker</title>
+
+  <link rel="icon" href="bookmark.png">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="title text-center">Bookmarker</h1>
+    <div class="inputs">
+      <hr>
+      <h2 class="text-center">
+        <i class="fa-solid fa-bookmark icon1"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+      </h2>
+
+      <div class="input-1">
+        <label for="siteName" class="mt-4">Site Name</label>
+        <input type="text" placeholder="Bookmark Name" name="siteName" id="siteName" class="form-control mt-2 mb-2 sitename">
+        <i class="fa-solid fa-book-bookmark email-icon"></i> 
+      </div>
+      <div class="input-2">
+        <label for="siteURL" class="mt-4">Site URL</label>
+        <input type="url" placeholder="Website URL" name="siteURL" id="siteURL" class="form-control  mt-2">
+        <i class="fa-solid fa-link url-icon"></i>
+      </div>
+      <button type="submit" class="btn btn-lg btn-submit px-5 mt-5" id="btn">submit</button>
+      <hr>
+    </div>
+    <table class="table table-striped text-center">
+   <thead class="fw-bold">
+    <td>Index</td>
+    <td>Website Name</td>
+    <td>Visit</td>
+    <td>Delete</td>
+
+
+   </thead>
+   <tbody id="tableRow">
+    
+   </tbody>
+    </table>
+  
+   
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

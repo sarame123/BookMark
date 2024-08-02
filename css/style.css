@@ -1,0 +1,80 @@
+body {
+    background-color: #F7ECDE;
+}
+
+.title {
+    font-family: Pacifico, cursive;
+    Font-size: 50px;
+    Font-weight: 500;
+    Line-height: 60px;
+    color: #352e28;
+    position: relative;
+}
+.title::after{
+    content: "";
+    width:24%;
+    height:20px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+   transform: translate(-50%);
+    background-color: #FEC260;
+    z-index: -1;
+    transition: height .5s;
+}
+.title:hover::after{
+    height:40px;
+}
+
+hr {
+    border: 1px dashed hsla(0, 0%, 0%, 0.829);
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.inputs h2 {
+    background: linear-gradient(to right, #f32170, #ff6b08,
+    #53A658, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.icon2 {
+    Font-size: 16px;
+    Font-weight: 900;
+    Line-height: 16px;
+    color: rgb(33, 37, 41)
+}
+
+.form-control:focus {
+    border-color: #fec260;
+    box-shadow: 0px 0px 5px rgba(240, 99, 56, 0.801);
+}
+.btn-submit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #EC4F56;
+    --bs-btn-hover-border-color: #EC4F56;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.swal-button {
+    background-color: hsl(0, 86%, 66%)
+}
+.input-1,.input-2{
+    position: relative;
+   
+}
+.email-icon,.url-icon {
+  position: absolute;
+  color: #d1512d;
+  font-size:20px;
+ bottom:10px;
+  right: 15px;
+  
+}
