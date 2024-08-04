@@ -17,10 +17,12 @@ var websites;
 
 btn.onclick = function () {
   if (siteName.value == "" && siteURL.value == "") {
-     sweetAlert(
-       "Site Name and Url is Empty", "", "error"
-     );
+    sweetAlert(
+      "Site Name and Url is Empty", "", "error"
+    );
   }
+  console.log("hi");
+
   addWebsite();
 }
 
@@ -30,28 +32,37 @@ function addWebsite() {
       name: siteName.value,
       url: siteURL.value,
     }
+    console.log(obj);
+
     websites.push(obj);
     localStorage.setItem("sites", JSON.stringify(websites))
-    display( websites);
+    display(websites);
     Swal.fire({
-    toast: true,
-    icon: 'success',
-    title: 'Posted successfully',
-    animation: false,
-    position: 'top-right',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
+      toast: true,
+      icon: 'success',
+      title: 'Posted successfully',
+      animation: false,
+      position: 'top-right',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
     clear();
   }
-   
+  else{
+    console.log("error");
+    notValid();
+    
+  }
+
 }
-function display(){
+
+
+function display() {
   box = ''
   for (i = 0; i < websites.length; i++) {
     box += `<tr>
@@ -60,9 +71,9 @@ function display(){
                <td><a class="btn btn-success target="_blank" href="${websites[i].url}" "><i class="fa-solid fa-eye pe-2"></i>visit</a></td>
                <td><button class="btn btn-danger" onclick="deleteSite(${i})" ><i class="fa-solid fa-trash-can pe-2"></i></i>Delete</button></td>
             </tr>`
-      
-     }
-     document.getElementById('tableRow').innerHTML = box;
+
+  }
+  document.getElementById('tableRow').innerHTML = box;
 }
 function clear() {
   siteName.value = "";
@@ -85,9 +96,10 @@ function siteNameRegex() {
   return regex.test(siteName.value);
 }
 function isValidUrl() {
-  var pattern =/^((http|https):\/\/)[A-Za-z]{2,50}\.?[a-zA-z0-9(\@?)]{1,255}\.[a-zA-z]{2,50}$/
+  var pattern = /^((http|https):\/\/)[A-Za-z]{2,50}\.?[a-zA-z0-9(\@?)]{1,255}\.[a-zA-z]{2,50}$/
   return pattern.test(siteURL.value);
 }
+
 for (i = 0; i < input.length; i++) {
   input[i].addEventListener("keydown", function notvalid() {
     var regex = /^[a-z][A-z]{3,50}$/
@@ -105,6 +117,7 @@ for (i = 0; i < input.length; i++) {
       siteURL.style.boxShadow = "blue"
 
     }
+  
     if (!siteNameRegex()) {
       if (siteName.value == "") {
         emailIcon.classList.replace("fa-book-bookmark", "fa-check-circle");
@@ -134,7 +147,10 @@ for (i = 0; i < input.length; i++) {
         siteURL.style.boxShadow = "none"
       }
     }
-  })
+  }
+)
+
 }
+
 
 
